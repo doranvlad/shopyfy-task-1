@@ -1,0 +1,17 @@
+#app .swiper-wrapper {
+    --swiper-navigation-color: rgb(var(--sc-title));
+}
+#app .swiper-pagination-bullet {
+    margin: 9px;
+    --swiper-pagination-bullet-inactive-color: rgb(var(--sc-body-secondary));
+    --swiper-pagination-color: rgb(var(--sc-title));
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-width: 5px;
+    --swiper-pagination-bullet-height: 5px;
+}
+
+@layer components {
+    .swiper-pagination {
+        @apply flex static items-center justify-center;
+    }
+}

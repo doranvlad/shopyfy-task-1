@@ -1,0 +1,39 @@
+@layer components {
+    .checkbox-switch {
+        @apply h-0 w-0 hidden;
+    }
+    .span-switch {
+        @apply cursor-pointer w-7 h-4 rounded-3xl bg-sc-title/30 relative duration-300;
+    }
+    .span-switch:after {
+        @apply content-[""] absolute h-3 w-3 rounded-full bg-sc-bg-primary duration-300 top-1/2 left-0.5 -translate-y-1/2;
+    }
+    .checkbox-switch:checked ~ .span-switch {
+        @apply bg-sc-title;
+    }
+    .checkbox-switch:checked ~ span {
+        @apply text-sc-link-primary-text-default;
+    }
+    .checkbox-switch:checked ~ .span-switch:after {
+        @apply translate-x-full;
+    }
+    .range::-webkit-slider-thumb {
+        @apply appearance-none h-4 w-4 bg-sc-title cursor-pointer z-1 rounded-full relative;
+        margin-block-start: -8px;
+    }
+    .range.range-second::-webkit-slider-thumb {
+        margin-left: 1.5px;
+    }
+    .range::-webkit-slider-runnable-track {
+        @apply w-full h-0.5 cursor-pointer bg-transparent border-none rounded-[2px];
+    }
+    .range::-moz-range-thumb {
+        @apply h-3 w-3 cursor-pointer rounded-full bg-sc-title;
+    }
+    .range::-moz-range-progress, .range::-moz-range-track {
+        @apply w-full h-0.5  cursor-pointer border-none rounded-[2px];
+    }
+    .range::-moz-range-progress, .range::-moz-range-track {
+        @apply bg-sc-subtitle/10;
+    }
+}

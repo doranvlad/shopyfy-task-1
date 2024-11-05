@@ -1,0 +1,5 @@
+@layer components  {
+  .text-13-px {
+    @apply text-[13px] leading-[20px];
+  }
+}

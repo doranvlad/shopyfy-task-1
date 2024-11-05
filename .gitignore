@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+shopify/assets/bundle.css
+shopify/assets/bundle.js
+shopify/assets/*.bundle.js

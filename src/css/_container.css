@@ -1,0 +1,9 @@
+@layer components {
+  .container {
+    @apply mx-auto px-7.5 md:px-15 max-w-full xl:px-25 xl:max-w-[1640px] 4k:max-w-[2280px];
+  }
+
+  .narrow-container {
+    @apply mx-auto w-full max-w-[1200px] 4k:max-w-[1840px];
+  }
+}

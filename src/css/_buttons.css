@@ -1,0 +1,203 @@
+@layer components {
+  /* group BTN */
+  .btn {
+    @apply relative cursor-pointer flex justify-center items-center space-x-1 md:space-x-2 transition-all duration-200 ease-in-out outline-none font-secondary text-center w-max max-w-full;
+  }
+
+  .btn, [data-line-item-img] {
+     &[aria-busy="true"] { @apply pointer-events-none; }
+     &[aria-busy="true"] span,
+     &[aria-busy="true"] svg {
+      @apply opacity-0;
+     }
+
+     &[aria-busy="true"] .btn-loader,
+     &[aria-busy="true"] .btn-loader > * {
+      @apply m-0 opacity-100 translate-y-0;
+     }
+   }
+  /* SIZE */
+  .btn--small {
+    @apply max-w-max px-3 py-1 text-sm font-medium;
+  }
+
+  .btn--sm {
+    @apply min-w-[90px] px-5 py-2 text-base font-medium;
+  }
+  .btn--md {
+    @apply min-w-[100px] px-5 py-2 text-base font-medium;
+  }
+  .btn--smD {
+    @apply min-w-[115px] px-5 py-2.5 text-base font-medium;
+  }
+  .btn--2xl {
+    @apply min-w-[125px] px-5 py-2.5 text-base font-medium;
+  }
+  .btn--2k {
+    @apply min-w-[135px] px-6 py-3 text-lg font-medium;
+  }
+
+  /* ROUNDING */
+  .btn--main {
+    @apply rounded-r-btn-main;
+  }
+  .btn--pill {
+    @apply rounded-r-btn-pill;
+  }
+  .btn--circle {
+    @apply rounded-full w-5.5 h-5.5 p-1.5 smD:w-8 smD:h-8 smD:p-[9px];
+  }
+
+  .btn--primary {
+    &.btn--primary__main {
+      &.btn--primary__main--fill {
+        @apply bg-sc-btn-primary-bg-default hover:bg-sc-btn-primary-bg-hover text-sc-btn-primary-text-default hover:text-sc-btn-primary-text-hover ring-1 ring-inset ring-transparent focus-visible:ring-sc-btn-primary-text-default/60;
+      }
+      &.btn--primary__main--outline {
+        @apply bg-transparent hover:bg-sc-btn-primary-bg-default text-sc-btn-primary-bg-default hover:text-sc-btn-primary-text-default ring-1 ring-inset ring-sc-btn-primary-bg-default focus-visible:ring-2;
+      }
+    }
+
+
+    &.btn--primary__pill {
+      &.btn--primary__pill--fill {
+        @apply bg-sc-btn-primary-bg-default hover:bg-sc-btn-primary-bg-hover text-sc-btn-primary-text-default hover:text-sc-btn-primary-text-hover ring-1 ring-inset ring-transparent focus-visible:ring-sc-btn-primary-text-default/60;
+      }
+      &.btn--primary__pill--outline {
+        @apply bg-transparent hover:bg-sc-btn-primary-bg-default text-sc-btn-primary-bg-default hover:text-sc-btn-primary-text-default ring-1 ring-inset ring-sc-btn-primary-bg-default focus-visible:ring-2;
+      }
+    }
+
+    &.btn--primary__circle {
+      &.btn--primary__circle--fill {
+        @apply bg-sc-btn-primary-bg-default hover:bg-sc-btn-primary-bg-hover text-sc-btn-primary-text-default hover:text-sc-btn-primary-text-hover ring-1 ring-inset ring-transparent focus-visible:ring-sc-btn-primary-text-default/60;
+      }
+      &.btn--primary__circle--outline {
+        @apply bg-transparent hover:bg-sc-btn-primary-bg-default text-sc-btn-primary-bg-default hover:text-sc-btn-primary-text-default ring-1 ring-inset ring-sc-btn-primary-bg-default focus-visible:ring-2;
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      @apply !pointer-events-none !bg-sc-btn-primary-bg-default/30;
+    }
+  }
+
+  .btn--secondary {
+    &.btn--secondary__main {
+      &.btn--secondary__main--fill {
+        @apply bg-sc-btn-secondary-bg-default hover:bg-sc-btn-secondary-bg-hover text-sc-btn-secondary-text-default hover:text-sc-btn-secondary-text-hover ring-1 ring-inset ring-transparent focus-visible:ring-sc-btn-secondary-text-default/60;
+      }
+      &.btn--secondary__main--outline {
+        @apply bg-transparent hover:bg-sc-btn-secondary-bg-default text-sc-btn-secondary-bg-default hover:text-sc-btn-secondary-text-default ring-1 ring-inset ring-sc-btn-secondary-bg-default focus-visible:ring-2;
+      }
+    }
+
+    &.btn--secondary__pill {
+      &.btn--secondary__pill--fill {
+        @apply bg-sc-btn-secondary-bg-default hover:bg-sc-btn-secondary-bg-hover text-sc-btn-secondary-text-default hover:text-sc-btn-secondary-text-hover ring-1 ring-inset ring-transparent focus-visible:ring-sc-btn-secondary-text-default/60;
+      }
+      &.btn--secondary__pill--outline {
+        @apply bg-transparent hover:bg-sc-btn-secondary-bg-default text-sc-btn-secondary-bg-default hover:text-sc-btn-secondary-text-default ring-1 ring-inset ring-sc-btn-secondary-bg-default focus-visible:ring-2;
+      }
+    }
+
+    &.btn--secondary__circle {
+      &.btn--secondary__circle--fill {
+        @apply bg-sc-btn-secondary-bg-default hover:bg-sc-btn-secondary-bg-hover text-sc-btn-secondary-text-default hover:text-sc-btn-secondary-text-hover ring-1 ring-inset ring-transparent focus-visible:ring-sc-btn-secondary-text-default/60;
+      }
+      &.btn--secondary__circle--outline {
+        @apply bg-transparent hover:bg-sc-btn-secondary-bg-default text-sc-btn-secondary-bg-default hover:text-sc-btn-secondary-text-default ring-1 ring-inset ring-sc-btn-secondary-bg-default focus-visible:ring-2;
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      @apply !pointer-events-none !bg-sc-btn-secondary-bg-default/30;
+    }
+  }
+
+  /* BUTTON LOADER START */
+  .btn-loader {
+    @apply absolute inset-0 flex items-center justify-center gap-1.5 opacity-0 -translate-y-2.5 duration-200 pointer-events-none !m-0;
+    .btn-loader__dot {
+      @apply w-1.5 h-1.5 rounded-full bg-current;
+      animation: dot-flashing .8s infinite alternate;
+      &:nth-child(1n) { animation-delay: 0;}
+      &:nth-child(2n) { animation-delay: 400ms;}
+      &:nth-child(3n) { animation-delay: 800ms;}
+    }
+  }
+  @keyframes dot-flashing {
+    0% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0.2;
+    }
+  }
+  /* BUTTON LOADER END */
+
+  /* group LINKS */
+  .link {
+    @apply flex justify-center items-center space-x-1 md:space-x-2 font-secondary transition-colors duration-150 ease-in-out;
+  }
+
+  /* SIZE */
+  .link--sm {
+    @apply text-xs font-medium;
+  }
+  .link--md {
+    @apply text-sm font-medium;
+  }
+  .link--smD {
+    @apply text-sm font-medium;
+  }
+  .link--2xl {
+    @apply text-base font-medium;
+  }
+  .link--2k {
+    @apply text-2xl font-medium;
+  }
+
+  .link--primary {
+    @apply text-sc-link-primary-text-default hover:text-sc-link-primary-text-hover;
+  }
+  .link--secondary {
+    @apply text-sc-link-secondary-text-default hover:text-sc-link-secondary-text-hover;
+  }
+
+  /* LINK ANIMATION */
+  .btn-link-anim,
+  .btn-link-anim-reverse {
+    @apply inline-block;
+  }
+
+  .btn-link-anim span {
+    @apply bg-[length:0_0.125em] bg-no-repeat bg-left-bottom bg-gradient-to-r from-current to-current transition-[background-size,color] ease-in-out duration-200;
+  }
+
+  .btn-link-anim:focus-within span,
+  .btn-link-anim:hover span,
+  .btn-link-anim.active span,
+  .group:hover .btn-link-anim span,
+  .peer:checked + .btn-link-anim span {
+    @apply bg-[length:100%_0.125em];
+  }
+
+  .btn-link-anim-reverse span {
+    @apply bg-[length:100%_0.125em] bg-no-repeat bg-left-bottom bg-gradient-to-r from-current to-current transition-[background-size,color] ease-in-out duration-200;
+  }
+
+  .btn-link-anim-reverse:focus-within span,
+  .btn-link-anim-reverse:hover span,
+  .btn-link-anim-reverse.active span,
+  .group:hover .btn-link-anim-reverse span,
+  .peer:checked + .btn-link-anim-reverse span {
+    @apply bg-[length:0_0.125em];
+  }
+
+  .btn .spin-reverse {
+    animation-direction: reverse;
+  }
+}

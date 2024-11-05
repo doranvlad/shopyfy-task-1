@@ -1,0 +1,24 @@
+@layer components {
+  .option-color {
+    @apply relative h-6 w-6 rounded-full border transition-colors duration-200 border-sc-title/30 overflow-hidden;
+    &.option-color--small {@apply h-3.5 w-3.5}
+    .swatch {
+      @apply h-full w-full rounded-full;
+    }
+    &.active {
+      @apply p-0.5 border-sc-subtitle;
+    }
+    &.unavailable {
+       @apply after:block after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:-rotate-45 after:h-px after:w-full after:bg-sc-title/30;
+    }
+  }
+  .option-default {
+    @apply flex items-center justify-center w-full py-2 px-3 md:py-2.5 md:px-5 rounded-r-btn-pill border border-sc-title/60 text-sc-title/60 hover:opacity-70 duration-200;
+    &.active {
+      @apply !border-sc-subtitle !text-sc-subtitle;
+    }
+    &.unavailable {
+      @apply border-sc-title/30 text-sc-title/30 line-through;
+    }
+  }
+}
