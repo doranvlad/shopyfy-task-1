@@ -1,0 +1,49 @@
+{% comment %}
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Font format name mapping:
+      Web Open Font Format => woff
+      Web Open Font Format 2 => woff2
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Font weight name mapping:
+      Thin (Hairline)           => 100
+      Extra Light (Ultra Light) => 200
+      Light                     => 300
+      Normal (Regular)          => 400
+      Medium                    => 500
+      Semi Bold (Demi Bold)     => 600
+      Bold                      => 700
+      Extra Bold (Ultra Bold)   => 800
+      Black (Heavy)             => 900
+      Extra Black (Ultra Black) => 950
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{% endcomment %}
+
+<style>
+  /* EXAMPLE HOW ADD CUSTOM FONT */
+  {% comment %}
+  /* FONT "Untitled Sans" START */
+  @font-face {
+    font-family: 'Untitled Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ 'untitled-sans-web-regular.woff2' | asset_url }}') format('woff2'),
+    url('{{ 'untitled-sans-web-regular.woff' | asset_url }}') format('woff');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Untitled Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('{{ 'untitled-sans-web-medium.woff2' | asset_url }}') format('woff2'),
+    url('{{ 'untitled-sans-web-medium.woff' | asset_url }}') format('woff');
+    font-display: fallback;
+  }
+  /* FONT "Untitled Sans" END */
+  {% endcomment %}
+
+  :root {
+    --font-primary: {{ settings.font_primary.family }}, {{ settings.font_primary.fallback_families }};
+    --font-secondary: {{ settings.font_secondary.family }}, {{ settings.font_secondary.fallback_families }};
+  }
+</style>
