@@ -11,7 +11,54 @@
   "sections": {
     "main": {
       "type": "blank-section",
+      "blocks": {
+        "block_tgRKth": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_3_1.jpg",
+            "icon": "shopify://shop_images/Icon_Stars.png",
+            "title": "Products to get your glow back",
+            "description": "<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes monstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur dynamicus.</p>"
+          }
+        },
+        "block_8kCYLE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_2.jpg",
+            "icon": "shopify://shop_images/Icon_Stars.png",
+            "title": "Products to get your glow back",
+            "description": "<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes monstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur dynamicus.</p>"
+          }
+        },
+        "block_h48REL": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_1.jpg",
+            "icon": "shopify://shop_images/Icon_Stars.png",
+            "title": "Products to get your glow back",
+            "description": "<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes monstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur dynamicus.</p>"
+          }
+        },
+        "block_UVtjae": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_4.jpg",
+            "icon": "shopify://shop_images/Icon_Stars.png",
+            "title": "Products to get your glow back",
+            "description": "<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes monstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur dynamicus.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_tgRKth",
+        "block_8kCYLE",
+        "block_h48REL",
+        "block_UVtjae"
+      ],
       "settings": {
+        "bg_color": "#eeeeee",
+        "text_color": "#15141a",
+        "title": "Heading"
       }
     }
   },

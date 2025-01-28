@@ -6,54 +6,7 @@
  */
 const path = require("path");
 const plugin = require("tailwindcss/plugin");
-const colors = {
-  transparent: "transparent",
-  "c-blur-overlay": "rgb(var(--c-blur-overlay) / <alpha-value>)",
-  /* ACCENT COLORS */
-  current: "currentColor",
-  "c-accent-success": "rgb(var(--c-accent-success) / <alpha-value>)",
-  "c-accent-warning": "rgb(var(--c-accent-warning) / <alpha-value>)",
-  "c-accent-error": "rgb(var(--c-accent-error) / <alpha-value>)",
-  // SCHEMA COLOR VARIABLES
-  //sc === schema color
-  "sc-title": "rgb(var(--sc-title) / <alpha-value>)",
-  "sc-subtitle": "rgb(var(--sc-subtitle) / <alpha-value>)",
-  "sc-body-primary": "rgb(var(--sc-body-primary) / <alpha-value>)",
-  "sc-body-secondary": "rgb(var(--sc-body-secondary) / <alpha-value>)",
-  "sc-bg-primary": "rgb(var(--sc-bg-primary) / <alpha-value>)",
-  "sc-bg-secondary": "rgb(var(--sc-bg-secondary) / <alpha-value>)",
-  "sc-btn-primary-bg-default":
-    "rgb(var(--sc-btn-primary-bg-default) / <alpha-value>)",
-  "sc-btn-primary-text-default":
-    "rgb(var(--sc-btn-primary-text-default) / <alpha-value>)",
-  "sc-btn-primary-bg-hover":
-    "rgb(var(--sc-btn-primary-bg-hover) / <alpha-value>)",
-  "sc-btn-primary-text-hover":
-    "rgb(var(--sc-btn-primary-text-hover) / <alpha-value>)",
-  "sc-btn-secondary-bg-default":
-    "rgb(var(--sc-btn-secondary-bg-default) / <alpha-value>)",
-  "sc-btn-secondary-text-default":
-    "rgb(var(--sc-btn-secondary-text-default) / <alpha-value>)",
-  "sc-btn-secondary-bg-hover":
-    "rgb(var(--sc-btn-secondary-bg-hover) / <alpha-value>)",
-  "sc-btn-secondary-text-hover":
-    "rgb(var(--sc-btn-secondary-text-hover) / <alpha-value>)",
-  "sc-link-primary-text-default":
-    "rgb(var(--sc-link-primary-text-default) / <alpha-value>)",
-  "sc-link-primary-text-hover":
-    "rgb(var(--sc-link-primary-text-hover) / <alpha-value>)",
-  "sc-link-secondary-text-default":
-    "rgb(var(--sc-link-secondary-text-default) / <alpha-value>)",
-  "sc-link-secondary-text-hover":
-    "rgb(var(--sc-link-secondary-text-hover) / <alpha-value>)",
-};
 /* BORDER RADIUS */
-const borderRadius = {
-  "r-btn-main": "var(--r-btn-main)",
-  "r-btn-pill": "var(--r-btn-pill)",
-  "r-input": "var(--r-input)",
-  "r-block": "var(--r-block)",
-};
 
 module.exports = {
   theme: {
@@ -63,18 +16,15 @@ module.exports = {
       lg: "992px",
       smD: "1150px",
       xl: "1280px",
+      "1xl": "1440px",
       "2xl": "1536px",
       "2k": "1920px",
       "4k": "2560px",
     },
     extend: {
-      backgroundImage: {
-        "primary-gradient": "var(--sc-bg-primary-gradient)",
-        "secondary-gradient": "var(--sc-bg-secondary-gradient)",
-      },
       fontFamily: {
-        primary: "var(--font-primary)".split(","),
-        secondary: "var(--font-secondary)".split(","),
+        primary: "",
+        secondary: "",
         // tertiary: ["", ""],
         // quaternary: ["", ""],
         // quinary: ["", ""]
@@ -136,12 +86,10 @@ module.exports = {
         80: "20rem" /* 320px */,
         96: "24rem" /* 384px */,
       },
-      colors,
       boxShadow: {
         top: "0 -1px 3px 0 rgb(0 0 0 / 0.1), 0 -1px 2px -1px rgb(0 0 0 / 0.1)",
         "btn-outline": "",
       },
-      borderRadius,
       ringWidth: {
         3: "3px",
       },

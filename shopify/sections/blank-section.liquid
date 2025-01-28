@@ -1,0 +1,127 @@
+{% liquid
+  assign bg_color = section.settings.bg_color
+  assign text_color = section.settings.text_color
+  assign title = section.settings.title
+
+  assign blocks = section.blocks
+%}
+
+<section
+  x-data="exampleComponent"
+  data-section-id="{{ section.id }}"
+  id="{{ anchor_id }}"
+  class="flex  flex-col items-center px-[14px] pt-[46px] md:px-[40px] md:pt-[141px]"
+  x-show="isVisible"
+>
+  <h1 class="mb-[32px] text-center text-[32px] font-semibold  md:mb-[48px] md:text-[42px]">{{ title }}</h1>
+  <div class="grid max-w-[1359px] grid-cols-2 gap-[15px] md:grid-cols-4 md:gap-[25px]">
+    {% for block in blocks %}
+      {% liquid
+        assign image = block.settings.image
+        assign icon = block.settings.icon
+        assign title = block.settings.title
+        assign description = block.settings.description
+      %}
+
+      <div class="flex flex-col">
+        {% if image != blank %}
+          <div
+            class="cursor-pointer"
+            @click="$store.popup.open({image: '{{image | img_url: 'master'}}', title: '{{title}}'})"
+          >
+            {{-
+              image
+              | image_url: width: image.width
+              | image_tag:
+                loading: 'lazy',
+                sizes: 'min(100vw, 800px)',
+                class: 'tw-w-full tw-h-full tw-hidden h-[127px] lg:tw-block mb-[8px] md:mb-[14px] md:h-[245px] object-cover',
+                widths: '300,400,500,600,700,800',
+                alt: image.alt
+            -}}
+          </div>
+        {% endif %}
+
+        <div class="mb-[6px] flex flex-col md:mb-[12px] md:flex-row md:gap-[7px]">
+          <div class="mb-[5px] w-[20px] md:w-[32px] md:items-center md:justify-center">
+            {% if icon != blank %}
+              {{-
+                icon
+                | image_url: width: icon.width
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: 'min(100vw, 800px)',
+                  class: 'tw-w-full tw-h-full tw-hidden lg:tw-block',
+                  widths: '300,400,500,600,700,800',
+                  alt: icon.alt
+              -}}
+            {% endif %}
+          </div>
+          <div class=" text-sm font-bold md:flex md:items-start md:text-base md:text-[19px]">{{ title }}</div>
+        </div>
+        <div class="line-clamp-5 text-[10px] md:text-[12px]">{{ description }}</div>
+      </div>
+    {% endfor %}
+    {% render 'popup-render' %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blank section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#EEE"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#15141A"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Get in Touch"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Block",
+      "type": "block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blank section"
+    }
+  ]
+}
+{% endschema %}

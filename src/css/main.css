@@ -6,25 +6,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "_reset";
-@import "_container";
-@import "_buttons";
-@import "_custom-cursor";
-@import "_forms";
-@import "_marquee";
-@import "_blur-overlay";
-@import "_navigation";
-@import "_slider";
-@import "_rte";
-@import "_custom-animation-values";
-@import "_options";
-
 /*Alpine directive x-cloak https://alpinejs.dev/directives/cloak */
-[x-cloak] { display: none !important; }
-
-@layer base {
-  html *,
-  body * {
-    @apply font-secondary;
-  }
+[x-cloak] {
+  display: none !important;
 }

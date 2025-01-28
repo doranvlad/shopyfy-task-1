@@ -1,21 +1,18 @@
-import Alpine from "alpinejs";
-
 export const popup = {
-  visible: false,
-  activePopup: "",
-  //used for multiple popups
-  id: "",
-  //popup key required
-  show({ popup, id = "" } = {}) {
-    this.visible = true;
-    this.activePopup = popup;
-    this.id = id;
-    Alpine.store("stop-scroll").enable();
+  isOpen: false,
+  open({ image, title }) {
+    this.image = image;
+    this.title = title;
+    this.isOpen = true;
   },
-  hide() {
-    this.visible = false;
-    this.activePopup = "";
-    this.id = "";
-    Alpine.store("stop-scroll").disable();
+  close() {
+    this.image = "";
+    this.title = "";
+    this.isOpen = false;
   },
+  init() {
+    console.log("Modal component initialized!");
+  },
+  image: "",
+  title: "",
 };
